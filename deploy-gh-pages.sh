@@ -6,7 +6,7 @@ npm run build
 
 cp -R ./dist/* ./gh-pages
 
-cd public
+cd gh-pages
 
 git add --all
 
