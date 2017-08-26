@@ -86,7 +86,6 @@ export default {
     cubeMouseDown() {
       var cubeXY = this.matrix.getXYFromIndex(this.cubeIndex);
       if (this.cube.type == 'begin' || this.cube.type == 'end') {
-        console.log(this.cube.type)
         this.$store.commit('UPDATE_SELECTED_CUBE_TYPE', this.cube.type);
         this.$store.commit('UPDATE_LAST_CLICKED_CUBE_INDEX', this.cubeIndex);
       } else {
@@ -121,7 +120,7 @@ export default {
             } else if (this.selectedCubeType == 'end') {
               this.matrix.setEnd(cubeXY.x, cubeXY.y);
             }
-            
+
             var lasyXY = this.matrix.getXYFromIndex(this.lastClickedCubeIndex);
             this.matrix.setTypePath(lasyXY.x, lasyXY.y);
             this.$store.commit('UPDATE_LAST_CLICKED_CUBE_INDEX', this.cubeIndex);
@@ -133,7 +132,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @import "../assets/app.less";
 
 .cube {

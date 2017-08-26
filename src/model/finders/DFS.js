@@ -27,12 +27,11 @@ function DFS(matrix) {
           var deltaCube = this.matrix.getCubeFromXY(deltaCubeX, deltaCubeY);
           if (!deltaCube.isVisited) {
             _visitlist.push(this.matrix.getIndexFromXY(deltaCubeX, deltaCubeY));
-
             this.matrix.setCubeExtended(deltaCubeX, deltaCubeY);
 
             this.matrix.setCubeFather(deltaCubeX, deltaCubeY, _currentCube.index, DeltaReversedDirection[i]);
 
-            if (endCube.isPathFound()) {
+            if (this.isPathFound()) {
               this.recordAllPath();
               return true;
             }

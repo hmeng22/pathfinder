@@ -110,8 +110,6 @@ export default {
   },
 
   mounted() {
-
-    console.log(!this.alg);
     this.alg = new AStar(this.matrix);
   },
 
@@ -151,24 +149,26 @@ export default {
     ]),
 
     run() {
-      console.log('run')
       this.clear();
       var flag = this.alg.findPath();
       if (flag) {
         this.$store.commit('UPDATE_MATRIX', this.alg.getFinalResult());
       } else {
-        console.log('shibai ')
+        this.$message({
+          showClose: true,
+          message: 'Oops, Fail to run.',
+          type: 'error'
+        });
       }
     },
 
     clear() {
-      console.log('clear')
       this.matrix.clearMatrix();
+      this.matrix.resetGraph();
       this.alg.resetFinder(this.matrix);
     },
 
     reset() {
-      console.log('reset')
       this.matrix.resetMatrix();
       this.matrix.setCornerWalk(this.cornerWalk);
       this.matrix.setHeuristic(this.heuristic);
@@ -176,9 +176,14 @@ export default {
     },
 
     previous() {
-      console.log('get Previous');
       if (this.alg.isPreviousStepAvailable()) {
         this.$store.commit('UPDATE_MATRIX', this.alg.getPreviousStepMatrix());
+      } else {
+        this.$message({
+          showClose: true,
+          message: 'No previous step.',
+          type: 'error'
+        });
       }
     },
 
@@ -186,16 +191,23 @@ export default {
       if (!this.alg.isHistoryReady) {
         var flag = this.alg.findPath();
         if (flag) {
-          console.log('get First');
           this.$store.commit('UPDATE_MATRIX', this.alg.getFirstResult());
         } else {
-          console.log('shibai ')
-
+          this.$message({
+            showClose: true,
+            message: 'Oops, Fail to run.',
+            type: 'error'
+          });
         }
       } else {
-        console.log('get Next');
         if (this.alg.isNextStepAvaiable()) {
           this.$store.commit('UPDATE_MATRIX', this.alg.getNextStepMatrix());
+        } else {
+          this.$message({
+            showClose: true,
+            message: 'No next step.',
+            type: 'error'
+          });
         }
       }
     },
@@ -261,7 +273,7 @@ export default {
 .controls {
     width: @controls-width;
     border: @martix-border-width solid @martix-border-color;
-    margin: 20px 0 0;
+    margin: 0;
     padding: 0;
 }
 

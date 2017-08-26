@@ -4,7 +4,7 @@ export var MovingCost = {
   Diagonal: 14,
   Turning: 4,
   Stay: 0
-}
+};
 
 export var Heuristic = {
   Manhattan: 0,
@@ -94,4 +94,4 @@ export var DeltaReversedDirection = [
   Direction.Up,
   Direction.UpRight,
   Direction.Right
-]
+];

@@ -11,20 +11,21 @@ function FloydWarshall(matrix) {
 
     // build distance
     var distance = [];
-    var previous = [];
+    var next = [];
     for (var i = 0; i < nodesSize; i++) {
       var arr = [];
       var brr = [];
       for (var j = 0; j < nodesSize; j++) {
         arr.push(Number.POSITIVE_INFINITY);
-        brr.push(-1)
+        brr.push(-1);
       }
       distance.push(arr);
-      previous.push(brr);
+      next.push(brr);
     }
     for (var i = 0; i < nodesSize; i++) {
       for (var j = 0; j < nodesSize; j++) {
         distance[i][j] = this.matrix.graph[i][j];
+        next[i][j] = j;
       }
     }
 
@@ -47,7 +48,7 @@ function FloydWarshall(matrix) {
             if (!ANodeCube.isObstacle && !BNodeCube.isObstacle) {
               if (distance[i][j] > distance[i][k] + distance[k][j]) {
                 distance[i][j] = distance[i][k] + distance[k][j];
-                previous[i][j] = k;
+                next[i][j] = next[i][k];
 
                 //
                 ANodeCube.sequence = this.sequence++;
@@ -60,15 +61,20 @@ function FloydWarshall(matrix) {
       }
     }
 
-    var previousPathNode = this.matrix.getCubeFromIndex(endNode);
-    var path = previous[beginNode][endNode];
-    if (path != -1) {
+    if (next[beginNode][endNode] != -1) {
+      var pathNodesIndexes = [];
+
+      var u = beginNode;
+      var v = endNode;
+      while (u != v) {
+        u = next[u][v];
+        pathNodesIndexes.push(u);
+      }
+
       var pathNode = null;
-      while (path != -1) {
-        pathNode = this.matrix.getCubeFromIndex(path);
-        previousPathNode.father = path;
-        previousPathNode = pathNode;
-        path = previous[beginNode][path];
+      for (var i = pathNodesIndexes.length - 1; i > 0; i--) {
+        pathNode = this.matrix.getCubeFromIndex(pathNodesIndexes[i]);
+        pathNode.father = pathNodesIndexes[i - 1];
       }
 
       this.recordAllPath();

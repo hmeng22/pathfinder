@@ -4,6 +4,8 @@ echo -e "\033[0;32mDeploying gh-pages to GitHub...\033[0m"
 
 npm run build
 
+rm -rf ./gh-pages/*
+
 cp -R ./dist/* ./gh-pages
 
 cd gh-pages
