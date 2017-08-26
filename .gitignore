@@ -13,4 +13,4 @@ yarn-error.log*
 *.sln
 
 gh-pages/*
-*.sh*
+*.sh
