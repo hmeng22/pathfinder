@@ -12,5 +12,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-./gh-pages/*
+gh-pages/*
 *.sh
