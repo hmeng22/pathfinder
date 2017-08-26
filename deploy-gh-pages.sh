@@ -6,6 +6,8 @@ npm run build
 
 rm -rf ./gh-pages/*
 
+mkdir gh-pages
+
 cp -R ./dist/* ./gh-pages
 
 cd gh-pages
