@@ -22,16 +22,16 @@ npm run build --report
 
 ```
 AStar         |
-JumpPoint		  |
-BiAStar			  |
-AStarHeap		  |
-BiAStarHeap	  |
-BFS				    |-----PathFinder
-BiBFS			    |			|- Matrix
-DFS				    |				|- Cube
-BiDFS			    |
-Dijkstar		  |
-FloydWarshall	|
+JumpPoint     |
+BiAStar       |
+AStarHeap     |
+BiAStarHeap   |
+BFS           |-----PathFinder
+BiBFS         |       |- Matrix
+DFS           |           |- Cube
+BiDFS         |
+Dijkstar      |
+FloydWarshall |
 ```
 
 ## Special Thanks
