@@ -2,6 +2,8 @@
 
 > Study path finding algorithms.
 
+An online demo is hosted on Github Pages : https://hmeng22.github.io/pathfinder/
+
 ## Build Setup
 
 ```bash
