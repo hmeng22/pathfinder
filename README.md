@@ -18,6 +18,22 @@ npm run build
 npm run build --report
 ```
 
+## Tips
+
+```
+AStar			|
+JumpPoint		|
+BiAStar			|
+AStarHeap		|
+BiAStarHeap		|
+BFS				|-----PathFinder
+BiBFS			|			|- Matrix
+DFS				|				|- Cube
+BiDFS			|
+Dijkstar		|
+FloydWarshall	|
+```
+
 ## Special Thanks
 
 * [Amit’s A* Pages](http://theory.stanford.edu/~amitp/GameProgramming/)
