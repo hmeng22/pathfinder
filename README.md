@@ -21,16 +21,16 @@ npm run build --report
 ## Tips
 
 ```
-AStar			|
-JumpPoint		|
-BiAStar			|
-AStarHeap		|
-BiAStarHeap		|
-BFS				|-----PathFinder
-BiBFS			|			|- Matrix
-DFS				|				|- Cube
-BiDFS			|
-Dijkstar		|
+AStar         |
+JumpPoint		  |
+BiAStar			  |
+AStarHeap		  |
+BiAStarHeap	  |
+BFS				    |-----PathFinder
+BiBFS			    |			|- Matrix
+DFS				    |				|- Cube
+BiDFS			    |
+Dijkstar		  |
 FloydWarshall	|
 ```
 
