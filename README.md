@@ -2,6 +2,8 @@
 
 > Study path finding algorithms.
 
+An online demo is hosted on Github Pages : https://hmeng22.github.io/pathfinder/
+
 ## Build Setup
 
 ```bash
@@ -16,6 +18,22 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
+```
+
+## Tips
+
+```
+AStar         |
+JumpPoint     |
+BiAStar       |
+AStarHeap     |
+BiAStarHeap   |
+BFS           |-----PathFinder
+BiBFS         |       |- Matrix
+DFS           |           |- Cube
+BiDFS         |
+Dijkstar      |
+FloydWarshall |
 ```
 
 ## Special Thanks
