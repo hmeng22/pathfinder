@@ -4,6 +4,11 @@
 
 An online demo is hosted on Github Pages : https://hmeng22.github.io/pathfinder/
 
+* Visualization (Path finding details)
+* Demostrate algorithms step by step (Previous & Next)
+* Various algorithms (AStar, Bi-AStar, JumpPoint, BFS, Bi-BFS, DFS, Bi-DFS, Dijkstra, FloydWarshall)
+* Settings (Orthogonal, Diagonal, Manhatten, Euclidean, Octile, Chebyshev)
+
 ## Build Setup
 
 ```bash
